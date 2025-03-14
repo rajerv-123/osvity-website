@@ -28,33 +28,63 @@ const UsingUnstop = () => {
   ];
 
   return (
-    <Box sx={{ textAlign: "center", p: 5, backgroundColor: "#F4F9FF" }}>
+    <Box
+      sx={{
+        textAlign: "center",
+        backgroundColor: "#rgba(255, 255, 255, 1)",
+        width: "100%",
+      }}
+    >
       <Box
         sx={{
+          height: "150px",
           display: "flex",
+
           justifyContent: "space-around",
+          textAlign: "center",
+          alignContent: "center",
           flexWrap: "wrap",
-          backgroundColor: "#004AAD",
+          background:
+            "linear-gradient(180deg, #084FC7 0%, rgba(8, 79, 199, 0) 172.16%)",
           color: "white",
           py: 3,
-          borderRadius: "8px",
+          // borderRadius: "8px",
           mb: 5,
         }}
       >
         {[
-          "21M+ Active Users",
-          "22.3M+ Assessments",
-          "130K+ Opportunities",
-          "800+ Brands Trust Us",
-          "42K+ Organisations",
-          "78+ Countries",
+          { number: "21M+", text: "Active Users" },
+          { number: "22.3M+", text: "Assessments" },
+          { number: "130K+", text: "Opportunities" },
+          { number: "800+", text: "Brands Trust Us" },
+          { number: "42K+", text: "Organisations" },
+          { number: "78+", text: "Countries" },
         ].map((item, index) => (
           <Typography
             key={index}
             variant="h6"
-            sx={{ fontSize: "1rem", fontWeight: "bold" }}
+            sx={{
+              fontWeight: "bold",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              fontSize: "2.1rem",
+            }}
           >
-            {item}
+            {item.number}
+            <Typography
+              variant="body2"
+              sx={{
+                fontSize: "1rem",
+                fontWeight: "bold",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                color: "white",
+              }}
+            >
+              {item.text}
+            </Typography>
           </Typography>
         ))}
       </Box>
@@ -71,7 +101,7 @@ const UsingUnstop = () => {
           <Grid item xs={12} sm={6} md={4} key={index}>
             <Card
               sx={{
-                p: 3,
+                p: 6,
                 textAlign: "center",
                 borderRadius: "16px",
                 boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)",
